@@ -6,33 +6,25 @@ public class Player : MonoBehaviour
 
 {
     public CharacterController cController;
+    [Header("Movement")]
+    [SerializeField] private float _speed = 10.0f;
 
-    private float _speed = 10.0f;
-    private float _gravity = -70.81f;
-    private float _jumpPwr = 5f;
-    private float _gcDelay = 0.5f;
-    [SerializeField]
-    private bool _secondChance = true;
+    [Header("Jumping")]
+    [SerializeField] private float _gravity = -70.81f;
+    [SerializeField] private float _jumpPwr = 5f;
+    [SerializeField] private float _gcDelay = 0.5f;
+    [SerializeField] private bool _secondChance = true;
 
     Vector3 velocity;
 
 
-
+    [Header("Detection")]
     public Transform groundCheck;
     public float groundDistance = 0.4f;
 
     public LayerMask groundMask;
     bool isGrounded;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-     
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -41,6 +33,7 @@ public class Player : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -1f;
+            _secondChance = true;
         }
 
 
@@ -51,24 +44,15 @@ public class Player : MonoBehaviour
         cController.Move(move * _speed * Time.deltaTime);
 
 
-        if (Input.GetButtonDown("Jump") && _secondChance == true)
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             velocity.y = Mathf.Sqrt(_jumpPwr * -2f * _gravity);
-        }
-
-        if (isGrounded != true)
-        {
-            Invoke("SecondChance", _gcDelay);
         }
 
         velocity.y += _gravity * Time.deltaTime;
         cController.Move(velocity * Time.deltaTime);
 
 
-    }
-    public void SecondChanceM()
-    {
-        _secondChance = false;
     }
 
 
