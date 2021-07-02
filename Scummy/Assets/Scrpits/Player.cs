@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
 
-        Vector3 move = transform.right * x + transform.forward * 0;
+        Vector3 move = -transform.right * x + transform.forward * 0;
         cController.Move(move * _speed * Time.deltaTime);
 
 
