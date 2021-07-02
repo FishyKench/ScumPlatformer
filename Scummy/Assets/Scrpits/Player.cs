@@ -10,11 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed = 10.0f;
 
     [Header("Jumping")]
-    [SerializeField] private float _gravity = -70.81f;
+    [SerializeField] private float _gravity = -9.81f;
     [SerializeField] private float _jumpPwr = 5f;
-    [SerializeField] private float _gcDelay = 0.5f;
-    [SerializeField] private bool _secondChance = true;
-
     Vector3 velocity;
 
 
@@ -33,20 +30,19 @@ public class Player : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -1f;
-            _secondChance = true;
+
         }
 
 
         float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = transform.right * x + transform.forward * 0;
         cController.Move(move * _speed * Time.deltaTime);
 
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
-            velocity.y = Mathf.Sqrt(_jumpPwr * -2f * _gravity);
+            velocity.y = Mathf.Sqrt(_jumpPwr * -3f * _gravity);
         }
 
         velocity.y += _gravity * Time.deltaTime;
