@@ -10,7 +10,6 @@ public class collectables : MonoBehaviour
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        Debug.Log("Spawned");
     }
 
     private void OnTriggerEnter(Collider other)
