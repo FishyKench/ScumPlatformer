@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1876944130301856289}
   - component: {fileID: 4461037481255861995}
   - component: {fileID: 3038060947196846908}
-  - component: {fileID: 3038060947196846899}
+  - component: {fileID: 4615799685359580127}
   m_Layer: 0
   m_Name: banadool
   m_TagString: Untagged
@@ -97,7 +97,7 @@ CapsuleCollider:
   m_Height: 0.019999977
   m_Direction: 1
   m_Center: {x: 0.015587129, y: -0.0000000032596283, z: 0}
---- !u!114 &3038060947196846899
+--- !u!114 &4615799685359580127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

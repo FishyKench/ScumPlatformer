@@ -2,28 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectables : MonoBehaviour
+public class collectables : MonoBehaviour
 {
-
+    [Header("References")]
     private Player _player;
 
-
-    void start()
+    private void Start()
     {
-        _player = GameObject.Find("Player").GetComponent<Player>();
-
-        if (_player == null)
-        {
-            Debug.LogError("Bruh");
-        }
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        Debug.Log("Spawned");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-                _player.AddScore();
-            Destroy(this.gameObject);
+                _player.addScore();
+                Destroy(this.gameObject);
+            
         }
+        else
+        {
+            Debug.Log("notplayer");
+        }
+
     }
 }

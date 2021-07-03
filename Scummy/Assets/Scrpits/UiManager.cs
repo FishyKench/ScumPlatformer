@@ -8,7 +8,6 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private Text _PillyText;
 
-    // Start is called before the first frame update
     void Start()
     {
         _PillyText.text = "PillyCounter: " + 0;

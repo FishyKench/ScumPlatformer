@@ -19,21 +19,17 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
 
+    [Header("Score")]
+    private UiManager uimanager;
+    private int score;
+
     public LayerMask groundMask;
     bool isGrounded;
 
-    [SerializeField]
-    private int _pillyCounter = 0;
-
-    private UiManager _uiManager;
-
-
-
-    void start()
+    private void Awake()
     {
-        _uiManager = GameObject.Find("Canvas").GetComponent<UiManager>();
+        uimanager = FindObjectOfType<UiManager>();
     }
-
     void Update()
     {
 
@@ -62,13 +58,9 @@ public class Player : MonoBehaviour
 
 
     }
-
-
-     public void AddScore()
+    public void addScore()
     {
-        _pillyCounter = _pillyCounter + 1;
-        _uiManager.UpdateScore(_pillyCounter);
+        score++;
+        uimanager.UpdateScore(score);
     }
-
-
 }
