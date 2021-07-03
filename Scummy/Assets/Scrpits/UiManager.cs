@@ -8,14 +8,16 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI _PillyText;
+    private Player _player;
 
     void Start()
     {
-        _PillyText.text = "0";
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        _PillyText.text = _player.score.ToString() + " / " + _player.maxScore;
     }
 
     public void UpdateScore(int playerScore)
     {
-        _PillyText.text = playerScore.ToString();
+        _PillyText.text = playerScore.ToString() + " / " + _player.maxScore;
     }
 }

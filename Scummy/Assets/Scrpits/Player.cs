@@ -21,7 +21,8 @@ public class Player : MonoBehaviour
 
     [Header("Score")]
     private UiManager uimanager;
-    private int score;
+    public int score;
+    public int maxScore;
 
     public LayerMask groundMask;
     bool isGrounded;
