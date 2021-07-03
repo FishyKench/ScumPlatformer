@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UiManager : MonoBehaviour
 {
     [SerializeField]
-    private Text _PillyText;
+    private TextMeshProUGUI _PillyText;
 
     void Start()
     {
-        _PillyText.text = "PillyCounter: " + 0;
+        _PillyText.text = "0";
     }
 
     public void UpdateScore(int playerScore)
     {
-        _PillyText.text = "PillyCounter: " + playerScore;
+        _PillyText.text = playerScore.ToString();
     }
 }
