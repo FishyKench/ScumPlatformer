@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class collectables : MonoBehaviour
+public class Collectables : MonoBehaviour
 {
     [Header("References")]
     private Player _player;
