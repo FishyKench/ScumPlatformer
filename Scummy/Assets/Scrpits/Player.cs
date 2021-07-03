@@ -22,6 +22,18 @@ public class Player : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+    [SerializeField]
+    private int _pillyCounter = 0;
+
+    private UiManager _uiManager;
+
+
+
+    void start()
+    {
+        _uiManager = GameObject.Find("Canvas").GetComponent<UiManager>();
+    }
+
     void Update()
     {
 
@@ -49,6 +61,13 @@ public class Player : MonoBehaviour
         cController.Move(velocity * Time.deltaTime);
 
 
+    }
+
+
+     public void AddScore()
+    {
+        _pillyCounter = _pillyCounter + 1;
+        _uiManager.UpdateScore(_pillyCounter);
     }
 
 
