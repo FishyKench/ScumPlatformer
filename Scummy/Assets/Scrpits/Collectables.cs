@@ -8,8 +8,6 @@ public class Collectables : MonoBehaviour
     private Player _player;
     [SerializeField]
     private AudioClip _pickUpAudio;
-    [SerializeField]
-    private AudioSource _audioSource;
 
     private void Start()
     {
@@ -22,7 +20,7 @@ public class Collectables : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _player.addScore();
-            _audioSource.Play();
+            AudioSource.PlayClipAtPoint(_pickUpAudio, transform.position);
             Destroy(this.gameObject);
             
         }
