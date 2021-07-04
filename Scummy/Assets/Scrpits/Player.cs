@@ -27,6 +27,16 @@ public class Player : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+    [SerializeField]
+    private AudioClip _jumpAudio;
+    [SerializeField]
+    private AudioSource _audioSource;
+
+
+
+
+
+
     private void Awake()
     {
         uimanager = FindObjectOfType<UiManager>();
@@ -52,6 +62,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             velocity.y = Mathf.Sqrt(_jumpPwr * -3f * _gravity);
+            _audioSource.Play();
         }
 
         velocity.y += _gravity * Time.deltaTime;
