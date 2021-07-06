@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     [Header("Jumping")]
     [SerializeField] private float _gravity = -9.81f;
     [SerializeField] private float _jumpPwr = 5f;
-    Vector3 velocity;
+      public Vector3 velocity;
+    public CharacterAnim _cAnim;
 
 
     [Header("Detection")]
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -1f;
+            _cAnim._anim.SetBool("isJumping", !isGrounded);
 
         }
 
