@@ -50,9 +50,12 @@ public class Player : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -1f;
-            _cAnim._anim.SetBool("isJumping", !isGrounded);
-
         }
+
+        //if the player is grounded that means he isn't jumping and vice versa
+        _cAnim.jumping = !isGrounded;
+
+        _cAnim._anim.SetFloat("yVelocity", velocity.y);
 
 
         float x = Input.GetAxis("Horizontal");

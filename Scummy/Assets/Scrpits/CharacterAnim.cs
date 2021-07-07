@@ -7,6 +7,9 @@ public class CharacterAnim : MonoBehaviour
 
     public Animator _anim;
     public Player _player;
+    
+
+    public bool jumping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,28 +30,18 @@ public class CharacterAnim : MonoBehaviour
             _anim.SetBool("isWalking", false);
         }
 
+        //if the player is jumping play the matching animation and vice versa
+        if (jumping) jump();
+        else if (!jumping) stopJump();
+    }
 
+    public void jump()
+    {
+        _anim.SetBool("isJumping", true);
+    }
 
-
-
-
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (_player.velocity.y > 0)
-            {
-            _anim.SetTrigger("isJumping");
-
-            }
-            else if (_player.velocity.y < -3.8)
-            {
-                _anim.SetBool("isFalling", true);
-            }
-            else
-            {
-                _anim.SetBool("isFalling", false);
-            }
-
-        }
+    public void stopJump()
+    {
+        _anim.SetBool("isJumping", false);
     }
 }
