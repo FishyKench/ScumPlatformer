@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class CharacterAnim : MonoBehaviour
 {
-
+    [Header("References")]
     public Animator _anim;
     public Player _player;
     
-
+    [Header("variables")]
     public bool jumping = false;
+    public float xValue;
+    [SerializeField] private float _rotSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
         _anim = GetComponent<Animator>();
         _player = GetComponent<Player>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButton("Horizontal"))
@@ -33,8 +33,13 @@ public class CharacterAnim : MonoBehaviour
         //if the player is jumping play the matching animation and vice versa
         if (jumping) jump();
         else if (!jumping) stopJump();
+
+
+        if (xValue < 0) rotateLeft();
+        else if (xValue > 0) rotateRight();
     }
 
+    //jumping
     public void jump()
     {
         _anim.SetBool("isJumping", true);
@@ -43,5 +48,16 @@ public class CharacterAnim : MonoBehaviour
     public void stopJump()
     {
         _anim.SetBool("isJumping", false);
+    }
+
+    //rotating with movement direction
+    public void rotateLeft()
+    {
+        
+    }
+
+    public void rotateRight()
+    {
+        
     }
 }
