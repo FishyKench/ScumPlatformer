@@ -7,7 +7,7 @@ public class CharacterAnim : MonoBehaviour
     [Header("References")]
     public Animator _anim;
     public Player _player;
-    
+
     [Header("variables")]
     public bool jumping = false;
     public float xValue;

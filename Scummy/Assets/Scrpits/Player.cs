@@ -5,7 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 
 {
+    [Header("References")]
     public CharacterController cController;
+
+
     [Header("Movement")]
     [SerializeField] private float _speed = 10.0f;
 
