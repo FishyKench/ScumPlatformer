@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     [Header("Jumping")]
     [SerializeField] private float _gravity = -9.81f;
     [SerializeField] private float _jumpPwr = 5f;
-      public Vector3 velocity;
+    public Vector3 velocity;
     public CharacterAnim _cAnim;
 
 
@@ -31,25 +31,15 @@ public class Player : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
-    [SerializeField]
-    private AudioClip _jumpAudio;
-    [SerializeField]
-    private AudioSource _audioSource;
-
-
-
-
-
-
     private void Awake()
     {
         uimanager = FindObjectOfType<UiManager>();
     }
     void Update()
     {
-        if (velocity.y <= -10)
+        if (velocity.y <= -50)
         {
-            cController.Move( -Vector3.down * 10 * Time.deltaTime);
+            cController.Move(-Vector3.down * 10 * Time.deltaTime);
             Debug.Log("TOO MUCH VELOCITY");
         }
 
@@ -65,7 +55,7 @@ public class Player : MonoBehaviour
 
         _cAnim.xValue = Input.GetAxisRaw("Horizontal");
 
-        _cAnim._anim.SetFloat("yVelocity", velocity.y);
+        _cAnim._anim.SetFloat("yVelocity",velocity.y / 2);
 
 
         float x = Input.GetAxis("Horizontal");
@@ -77,14 +67,14 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             velocity.y = Mathf.Sqrt(_jumpPwr * -3f * _gravity);
-            _audioSource.Play();
+            FindObjectOfType<AudioManager>().play("jump");
         }
 
         velocity.y += _gravity * Time.deltaTime;
         cController.Move(velocity * Time.deltaTime);
 
 
-     
+
 
 
     }

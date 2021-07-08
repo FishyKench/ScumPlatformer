@@ -6,8 +6,6 @@ public class Collectables : MonoBehaviour
 {
     [Header("References")]
     private Player _player;
-    [SerializeField]
-    private AudioClip _pickUpAudio;
 
     private void Start()
     {
@@ -20,7 +18,7 @@ public class Collectables : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _player.addScore();
-            AudioSource.PlayClipAtPoint(_pickUpAudio, transform.position);
+            FindObjectOfType<AudioManager>().play("pillyPickup");
             Destroy(this.gameObject);
             
         }
