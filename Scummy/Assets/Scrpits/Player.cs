@@ -47,6 +47,11 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        if (velocity.y <= -10)
+        {
+            cController.Move( -Vector3.down * 10 * Time.deltaTime);
+            Debug.Log("TOO MUCH VELOCITY");
+        }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -77,6 +82,9 @@ public class Player : MonoBehaviour
 
         velocity.y += _gravity * Time.deltaTime;
         cController.Move(velocity * Time.deltaTime);
+
+
+     
 
 
     }
