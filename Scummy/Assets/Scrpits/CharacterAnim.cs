@@ -7,11 +7,11 @@ public class CharacterAnim : MonoBehaviour
     [Header("References")]
     public Animator _anim;
     public Player _player;
+    public Transform playerTransform;
 
     [Header("variables")]
     public bool jumping = false;
     public float xValue;
-    [SerializeField] private float _rotSpeed;
 
     void Start()
     {
@@ -53,11 +53,11 @@ public class CharacterAnim : MonoBehaviour
     //rotating with movement direction
     public void rotateLeft()
     {
-        
+        playerTransform.rotation = Quaternion.Euler(playerTransform.rotation.x, 60f, playerTransform.rotation.z);
     }
 
     public void rotateRight()
     {
-        
+        playerTransform.rotation = Quaternion.Euler(playerTransform.rotation.x, -60f, playerTransform.rotation.z);
     }
 }
