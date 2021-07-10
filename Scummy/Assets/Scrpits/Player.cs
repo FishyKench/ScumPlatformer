@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+    [Header("Particles")]
+    public GameObject jumpParticle;
+
     private void Awake()
     {
         uimanager = FindObjectOfType<UiManager>();
@@ -68,6 +71,7 @@ public class Player : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(_jumpPwr * -3f * _gravity);
             FindObjectOfType<AudioManager>().play("jump");
+            Instantiate(jumpParticle, groundCheck);
         }
 
         velocity.y += _gravity * Time.deltaTime;
