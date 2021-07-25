@@ -33,4 +33,13 @@ public class movingPlatform : MonoBehaviour
     {
         Gizmos.DrawLine(_pos1.position, _pos2.position);
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("PAL");
+            other.GetComponent<Rigidbody>().transform.position = this.gameObject.GetComponent<Rigidbody>().position;
+        }
+    }
 }
