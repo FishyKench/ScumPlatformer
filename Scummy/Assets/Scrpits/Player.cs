@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     {
         if (velocity.y <= -50)
         {
-            cController.Move(-Vector3.down * 10 * Time.deltaTime);
+           cController.Move(-Vector3.down * 10 * Time.deltaTime);
             Debug.Log("TOO MUCH VELOCITY");
         }
 
