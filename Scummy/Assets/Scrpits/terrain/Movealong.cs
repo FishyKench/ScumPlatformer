@@ -33,7 +33,6 @@ public class Movealong : MonoBehaviour
 
 
             ccController.Move(ObjVelocity * Time.deltaTime);
-
         }
 
     }
@@ -46,11 +45,7 @@ public class Movealong : MonoBehaviour
             contact = true;
         }
 
-
-
-
     }
-
 
     private void OnTriggerExit(Collider other)
     {
