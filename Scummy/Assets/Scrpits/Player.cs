@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
     [Header("Score")]
     private UiManager uimanager;
     public int score;
-    public int maxScore;
 
     public LayerMask groundMask;
     bool isGrounded;
@@ -43,7 +42,6 @@ public class Player : MonoBehaviour
         if (velocity.y <= -50)
         {
            cController.Move(-Vector3.down * 10 * Time.deltaTime);
-            Debug.Log("TOO MUCH VELOCITY");
         }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

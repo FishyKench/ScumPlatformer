@@ -38,7 +38,6 @@ public class movingPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("PAL");
             other.GetComponent<Rigidbody>().transform.position = this.gameObject.GetComponent<Rigidbody>().position;
         }
     }

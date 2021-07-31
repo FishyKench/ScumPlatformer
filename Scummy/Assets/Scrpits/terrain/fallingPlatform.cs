@@ -15,7 +15,6 @@ public class fallingPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Falling:Player");
             rb.isKinematic = false;
         }
     }
