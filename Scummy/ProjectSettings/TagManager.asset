@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Gamemanager
   - movingPlatform
+  - Spike
   layers:
   - Default
   - TransparentFX

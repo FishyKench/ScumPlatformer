@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingBlock : MonoBehaviour
+public class SpikeOnWall : MonoBehaviour
 {
     [SerializeField]
     public Rigidbody block;
     [SerializeField]
-    private float _fallSpeed;
-
-
+    private float _speed;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +25,8 @@ public class FallingBlock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            block.useGravity = true;
-            block.AddForce(Vector3.down * _fallSpeed);
+            block.AddForce(Vector3.left * _speed);
             Destroy(this.gameObject);
-
         }
     }
 }

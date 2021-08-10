@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingBlock : MonoBehaviour
+public class TestSpikeAppear : MonoBehaviour
 {
-    [SerializeField]
-    public Rigidbody block;
-    [SerializeField]
-    private float _fallSpeed;
 
+    public MeshRenderer spike;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spike.enabled = false;
     }
 
     // Update is called once per frame
@@ -26,10 +23,7 @@ public class FallingBlock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            block.useGravity = true;
-            block.AddForce(Vector3.down * _fallSpeed);
-            Destroy(this.gameObject);
-
+            spike.enabled = true;
         }
     }
 }

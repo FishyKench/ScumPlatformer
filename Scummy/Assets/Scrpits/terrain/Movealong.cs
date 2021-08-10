@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movealong : MonoBehaviour
 {
     [SerializeField] public GameObject player;
-    [SerializeField] float flwspeed = 1.0f;
+    //[SerializeField] float flwspeed = 1.0f;
     public CharacterController ccController;
     bool contact = false;
 

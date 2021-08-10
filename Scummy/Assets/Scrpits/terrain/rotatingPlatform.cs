@@ -11,4 +11,13 @@ public class rotatingPlatform : MonoBehaviour
     {
         gameObject.transform.Rotate(_xrotAmount, _yrotAmount, _zrotAmount);
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+          //  Destroy(other.gameObject);
+        }
+    }
 }
