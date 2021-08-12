@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -1703357368344956020}
   - component: {fileID: 9126761057052852417}
   - component: {fileID: 7880493431007337606}
-  - component: {fileID: 7046749363794056902}
   m_Layer: 0
   m_Name: Pilly
   m_TagString: Untagged
@@ -128,18 +127,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e6b7805519c4354bad96ed4cb2db8e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pickUpAudio: {fileID: 8300000, guid: 41ba21b169c3d284ea1412197c5bdc17, type: 3}
---- !u!114 &7046749363794056902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5550029724104636505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e9839da703e4ab4aa88080ea69b9735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
