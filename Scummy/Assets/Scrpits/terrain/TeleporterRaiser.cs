@@ -8,7 +8,8 @@ public class TeleporterRaiser : MonoBehaviour
     [SerializeField]
     private int _pillyCount;
     [SerializeField]
-    private bool _isRaised;
+    private bool isCollected;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,9 @@ public class TeleporterRaiser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_pillyCount == 2 && ! _isRaised)
+        if (_pillyCount == 2 && !isCollected )
         {
-            RaiseBlock();
+            onCollider();
         }
     }
 
@@ -30,13 +31,12 @@ public class TeleporterRaiser : MonoBehaviour
         _pillyCount += 1;
     }
 
-
-    private void RaiseBlock()
+    public void onCollider()
     {
-        transform.position = new Vector3(-101, 83.5f, transform.position.z);
-        _isRaised = true;
+        MeshCollider sc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
+        sc.convex = true;
+        sc.isTrigger = true;
+        isCollected = true;
     }
-
-
-
 }
+
