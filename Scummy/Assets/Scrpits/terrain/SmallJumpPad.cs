@@ -24,6 +24,7 @@ public class SmallJumpPad : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<Player>().velocity.y += jumpSrrength;
+            FindObjectOfType<AudioManager>().play("jumppad");
         }
     }
 
