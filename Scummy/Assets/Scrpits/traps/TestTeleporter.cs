@@ -25,6 +25,7 @@ public class TestTeleporter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.transform.position = location.transform.position;
+            player.GetComponent<Player>().velocity = Vector3.zero;
             Physics.SyncTransforms();
         }
     }

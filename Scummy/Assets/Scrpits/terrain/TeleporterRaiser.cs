@@ -9,12 +9,14 @@ public class TeleporterRaiser : MonoBehaviour
     private int _pillyCount;
     [SerializeField]
     private bool isCollected;
+    [SerializeField]
+    private ParticleSystem particles;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        particles.Pause();
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class TeleporterRaiser : MonoBehaviour
         sc.convex = true;
         sc.isTrigger = true;
         isCollected = true;
+        particles.Play();
     }
 }
 
