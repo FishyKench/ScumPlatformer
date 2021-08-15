@@ -10,7 +10,7 @@ public class SpikeTrap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GetComponent<Player>();
+        _player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
