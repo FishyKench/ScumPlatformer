@@ -30,7 +30,7 @@ public class levelManager : MonoBehaviour
     private void updateLevelStats()
     {
         _uim.maxScore = _maxscore;
-        _uim._levelNameText.text = _levelName;
+        //_uim._levelNameText.text = _levelName;
         _uim.UpdateScore(0);
         didActivate = true;
     }

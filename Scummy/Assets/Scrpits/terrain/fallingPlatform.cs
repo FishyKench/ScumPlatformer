@@ -32,8 +32,9 @@ public class fallingPlatform : MonoBehaviour
 
     IEnumerator DestroyPlatform()
     {
-        yield return new WaitForSeconds(1.3f);
-        Destroy(this.gameObject);
-      
+        yield return new WaitForSeconds(2f);
+        this.transform.position = new Vector3(0, 0.39f, 0);
+        rb.isKinematic = true;
+
     }
 }

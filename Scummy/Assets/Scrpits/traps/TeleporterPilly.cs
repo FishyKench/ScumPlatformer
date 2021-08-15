@@ -6,6 +6,8 @@ public class TeleporterPilly : MonoBehaviour
 {
     [Header("References")]
     private Player _player;
+    [SerializeField]
+    private MeshCollider _mCollider;
 
     // Start is called before the first frame update
     void Start()
