@@ -5,8 +5,6 @@ using UnityEngine;
 public class fallingPlatform : MonoBehaviour
 {
     private Rigidbody rb;
-    [SerializeField]
-    private GameObject _killPlatform;
 
     private void Start()
     {
