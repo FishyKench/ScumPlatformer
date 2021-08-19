@@ -10,11 +10,12 @@ public class UiManager : MonoBehaviour
     private TextMeshProUGUI _PillyText;
     private Player _player;
     
-    public TextMeshProUGUI _levelNameText;
     public int maxScore;
+    public GameObject gameoverPanel;
 
     void Start()
     {
+        gameoverPanel.SetActive(false);
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         Debug.Log(maxScore);
     }
@@ -22,5 +23,10 @@ public class UiManager : MonoBehaviour
     public void UpdateScore(int playerScore)
     {
         _PillyText.text = playerScore.ToString() + " / " + maxScore;
+    }
+
+    public void ShowGameoverPanel()
+    {
+        gameoverPanel.SetActive(true);
     }
 }

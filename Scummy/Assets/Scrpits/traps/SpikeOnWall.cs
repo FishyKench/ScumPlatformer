@@ -25,6 +25,7 @@ public class SpikeOnWall : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<Player>().Death();
             block.AddForce(Vector3.left * _speed);
             Destroy(this.gameObject);
         }

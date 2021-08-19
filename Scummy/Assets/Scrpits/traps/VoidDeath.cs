@@ -19,7 +19,8 @@ public class VoidDeath : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Destroy(other.gameObject);
+            // Destroy(other.gameObject);
+            other.GetComponent<Player>().Death();
         }
     }
 }

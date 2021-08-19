@@ -8,8 +8,7 @@ public class water : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //death
-            Debug.Log("DIE");
+            other.GetComponent<Player>().Death();
         }
     }
 }

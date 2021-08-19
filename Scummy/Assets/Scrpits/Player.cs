@@ -85,5 +85,11 @@ public class Player : MonoBehaviour
         uimanager.UpdateScore(score);
     }
 
+    public void Death()
+    {
+        uimanager.ShowGameoverPanel();
+        Destroy(gameObject);
+    }
+
 
 }
