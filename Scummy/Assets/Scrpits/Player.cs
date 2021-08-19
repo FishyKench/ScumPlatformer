@@ -85,10 +85,5 @@ public class Player : MonoBehaviour
         uimanager.UpdateScore(score);
     }
 
-    public void death()
-    {
-        Destroy(this.gameObject);
-    }
-
 
 }
