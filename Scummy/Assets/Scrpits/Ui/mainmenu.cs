@@ -11,6 +11,10 @@ public class mainmenu : MonoBehaviour
     [SerializeField] GameObject optionsPanel;
     [SerializeField] GameObject mainPanel;
 
+    private void Start()
+    {
+        optionsPanel.SetActive(false);
+    }
     public void onPress( string levelname)
     {
         if (levelname == "quit")
