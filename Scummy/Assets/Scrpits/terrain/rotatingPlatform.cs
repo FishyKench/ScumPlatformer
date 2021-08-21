@@ -17,7 +17,7 @@ public class rotatingPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-           Destroy(other.gameObject);
+            other.GetComponent<Player>().Death(); 
         }
     }
 }

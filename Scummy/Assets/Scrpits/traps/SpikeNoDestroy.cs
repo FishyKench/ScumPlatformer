@@ -21,6 +21,11 @@ public class SpikeNoDestroy : MonoBehaviour
         {
             //Destroy(other.gameObject);
             other.GetComponent<Player>().Death();
+            Destroy(this.gameObject);
+            if (transform.position.z == 0.25)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
