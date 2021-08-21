@@ -6,12 +6,17 @@ using TMPro;
 
 public class UiManager : MonoBehaviour
 {
+    [SerializeField] private string[] tips;
+
+    [Space(50)]
+
     [SerializeField]
     private TextMeshProUGUI _PillyText;
     private Player _player;
     
     public int maxScore;
     public GameObject gameoverPanel;
+    public TextMeshProUGUI tipsText;
 
     void Start()
     {
@@ -27,6 +32,7 @@ public class UiManager : MonoBehaviour
 
     public void ShowGameoverPanel()
     {
+        tipsText.text = tips[Random.Range(0, tips.Length)];
         gameoverPanel.SetActive(true);
     }
 }

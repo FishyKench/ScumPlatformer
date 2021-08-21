@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     [Header("Particles")]
     public GameObject jumpParticle;
 
+    
+
     private void Awake()
     {
         uimanager = FindObjectOfType<UiManager>();
