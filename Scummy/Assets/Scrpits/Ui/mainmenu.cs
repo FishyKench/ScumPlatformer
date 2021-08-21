@@ -19,7 +19,7 @@ public class mainmenu : MonoBehaviour
         }
         else if(levelname == "play")
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("game");
         }
         else if(levelname == "options")
         {
