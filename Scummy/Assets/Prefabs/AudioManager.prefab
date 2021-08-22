@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6532014105921850297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6532014105921850299}
+  - component: {fileID: 6532014105921850298}
+  - component: {fileID: 6532014105921850292}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6532014105921850299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532014105921850297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6532014105921850298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532014105921850297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82024bd231dd5745b695b629422df3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: jump
+    clip: {fileID: 8300000, guid: 4f656feb7ea6aaf41aff56cd4cebc255, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    mixergroup: {fileID: -6616851044615128656, guid: c0dd4493f13b471489b258c36e4ce4d3, type: 2}
+    source: {fileID: 0}
+  - name: pillyPickup
+    clip: {fileID: 8300000, guid: 41ba21b169c3d284ea1412197c5bdc17, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    mixergroup: {fileID: -6616851044615128656, guid: c0dd4493f13b471489b258c36e4ce4d3, type: 2}
+    source: {fileID: 0}
+  - name: jumppad
+    clip: {fileID: 8300000, guid: e23a29fcaa039ab4d9561dee652c009c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    mixergroup: {fileID: -6616851044615128656, guid: c0dd4493f13b471489b258c36e4ce4d3, type: 2}
+    source: {fileID: 0}
+  - name: pop
+    clip: {fileID: 8300000, guid: a6f530203c81621479b0ee98bcee3984, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    mixergroup: {fileID: -6616851044615128656, guid: c0dd4493f13b471489b258c36e4ce4d3, type: 2}
+    source: {fileID: 0}
+--- !u!114 &6532014105921850292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532014105921850297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c98414ab79d0749adbd2134a39ae8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: c0dd4493f13b471489b258c36e4ce4d3, type: 2}
