@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SpinnyCube : MonoBehaviour
 {
+
+    private timer timer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = FindObjectOfType<timer>();
     }
 
     // Update is called once per frame

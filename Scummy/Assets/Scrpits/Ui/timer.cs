@@ -39,8 +39,14 @@ public class timer : MonoBehaviour
     public void stopTimer()
     {
         playing = false;
+    }
 
-        //this commented line should happen on win to set the highscore 
-        //uim.checkHighscore(timerFloat);
+    public void onWin()
+    {
+        uim.checkHighscore(timerFloat);
+
+        //temporary
+        playing = false;
+        FindObjectOfType<Player>().Death();
     }
 };
