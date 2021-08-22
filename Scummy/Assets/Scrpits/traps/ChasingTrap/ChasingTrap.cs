@@ -1,0 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ChasingTrap : MonoBehaviour
+{
+    [SerializeField] Transform _pos1, _pos2;
+    [SerializeField] float _speed;
+    [SerializeField] Transform _StartPos;
+
+    public bool shouldGo;
+
+    Vector3 nextPos;
+
+    private void Start()
+    {
+        nextPos = _StartPos.position;
+    }
+
+    private void Update()
+    {
+        if (shouldGo)
+        {
+            if (transform.position == _pos1.position)
+            {
+                nextPos = _pos2.position;
+            }
+            if (transform.position == _pos2.position)
+            {
+                nextPos = _pos1.position;
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, _speed * Time.deltaTime);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(_pos1.position, _pos2.position);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.GetComponent<Rigidbody>().transform.position = this.gameObject.GetComponent<Rigidbody>().position;
+        }
+    }
+
+public void stopChase()
+    {
+        shouldGo = false;
+    }
+}

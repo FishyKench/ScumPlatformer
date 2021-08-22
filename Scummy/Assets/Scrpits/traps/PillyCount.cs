@@ -23,6 +23,7 @@ public class PillyCount : MonoBehaviour
         {
             _tpRaiser.AddPilly();
             Destroy(this.gameObject);
+            FindObjectOfType<AudioManager>().play("pillyPickup");
         }
     }
 }

@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
 
     public void Death()
     {
+        FindObjectOfType<AudioManager>().play("pop");
         uimanager.ShowGameoverPanel();
         Destroy(gameObject);
     }
