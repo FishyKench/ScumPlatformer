@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeTrap : MonoBehaviour
+public class SpikeOnTrapisland : MonoBehaviour
 {
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -16,7 +15,6 @@ public class SpikeTrap : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -28,6 +26,7 @@ public class SpikeTrap : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+            print("loooooooool");
         }
     }
 }
