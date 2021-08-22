@@ -41,4 +41,9 @@ public class mainmenu : MonoBehaviour
             }
         }
     }
+
+    public void resetProgress()
+    {
+        PlayerPrefs.DeleteKey("highscore");
+    }
 }
