@@ -47,6 +47,6 @@ public class timer : MonoBehaviour
 
         //temporary
         playing = false;
-        FindObjectOfType<Player>().Death();
+        uim.win();
     }
 };

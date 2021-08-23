@@ -24,10 +24,17 @@ public class UiManager : MonoBehaviour
     public TextMeshProUGUI time;
     public TextMeshProUGUI bestTime;
 
+    [Header("Win screen")]
+    public GameObject winScreen;
+    public TextMeshProUGUI timeEnd;
+    public TextMeshProUGUI bestTimeEnd;
+    public TextMeshProUGUI pillyCountEnd;
+
     void Start()
     {
         Cursor.visible = false;
         gameoverPanel.SetActive(false);
+        winScreen.SetActive(false);
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         timer = FindObjectOfType<timer>();
         Debug.Log(maxScore);
@@ -63,6 +70,7 @@ public class UiManager : MonoBehaviour
             int minutes = (int)(time / 60) % 60;
 
             bestTime.text = hours.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
+            bestTimeEnd.text = hours.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
 
         }
         else
@@ -76,6 +84,18 @@ public class UiManager : MonoBehaviour
             int minutesPref = (int)(PlayerPrefs.GetFloat("highscore") / 60) % 60;
 
             bestTime.text = hoursPref.ToString("00") + ":" + minutesPref.ToString("00") + ":" + secondsPref.ToString("00");
+            bestTimeEnd.text = hoursPref.ToString("00") + ":" + minutesPref.ToString("00") + ":" + secondsPref.ToString("00");
         }
     }
-}
+
+    public void win()
+    {
+        Cursor.visible = true;
+        winScreen.SetActive(true);
+
+        timeEnd.text = timer.timerText.text;
+        timer.stopTimer();
+
+        pillyCountEnd.text = _PillyText.text;
+    }
+ }
