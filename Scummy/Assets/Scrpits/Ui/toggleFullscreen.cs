@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class toggleFullscreen : MonoBehaviour
 {
 
-    private void Start()
+    private void Awake()
     {
         if(PlayerPrefs.GetInt("fullscreen") == 1)
         {
@@ -23,8 +23,14 @@ public class toggleFullscreen : MonoBehaviour
         print(Screen.fullScreen);
 
         if (fullscreen)
-            PlayerPrefs.SetInt("fulscreen", 1);
+        {
+            PlayerPrefs.SetInt("fullscreen", 1);
+
+        }
         else
+        {
             PlayerPrefs.SetInt("fullscreen", 0);
+
+        }
     }
 }

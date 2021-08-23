@@ -26,6 +26,7 @@ public class UiManager : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
         gameoverPanel.SetActive(false);
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         timer = FindObjectOfType<timer>();
@@ -39,6 +40,7 @@ public class UiManager : MonoBehaviour
 
     public void ShowGameoverPanel()
     {
+        Cursor.visible = true;
         tipsText.text = tips[Random.Range(0, tips.Length)];
         gameoverPanel.SetActive(true);
 
